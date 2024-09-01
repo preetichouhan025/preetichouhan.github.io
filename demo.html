@@ -1,7 +1,4 @@
 <!DOCTYPE HTML>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 <html>
 	<head>
 		<title>Preeti Chouhan</title>
@@ -63,9 +60,8 @@
 								</li>
 								<!-- <li><a href="left-sidebar.html">Work Experience</a></li> -->
 								<!-- <li><a href="right-sidebar.html">Articles</a></li> -->
-								<li><a href="workexperience.html">Work Experience</a></li>
+								<li><a href="no-sidebar.html">Work Experience</a></li>
 								<li><a href="https://medium.com/@preetichouhan025"  target="_blank">Articles</a></li>
-								<li><a href="#footer1"  target="_blank">Contact</a></li>
 							</ul>
 						</nav>
 
@@ -281,76 +277,36 @@
 				</div>
 
 			<!-- Footer -->
-				<div id="footer1">
-					<div class="inner">
-						<h2 class="major">Looking for Opportunities and Open to Collaboration: Let's Connect</h2>
-						<p>I'm always eager to connect with like-minded individuals and explore new opportunities. Whether you have a project in mind, need help, or just want to chat, feel free to reach out—I'd love to hear from you!</p>
-						<form method="post" action="https://formspree.io/f/xeojdjzp">
-							<div class="fields">
-								<div class="field">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" required/>
-								</div>
-								<div class="field">
-									<label for="email">Email</label>
-									<input type="email" name="email" id="email" required/>
-								</div>
-								<div class="field">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="5" required ></textarea>
-								</div>
+				<div id="footer">
+					<div class="container">
+						
+						<hr />
+						<div class="row">
+							<div class="col-12">
+
+								<!-- Contact -->
+									<section class="contact">
+										<header>
+											<h3>Nisl turpis nascetur interdum?</h3>
+										</header>
+										<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
+										<ul class="icons">
+											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+											<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+											<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+										</ul>
+									</section>
+
 							</div>
-							<br>
-							<ul class="actions">
-								<li><input type="submit" value="Send Message" /></li>
-							</ul>
-						</form>
-						</div>
-					</div>
-
-		
-
-			<!-- Footer -->
-			<div id="footer">
-				<div class="container">			
-					<div class="row">
-						<div class="col-12">
-							<!-- Contact -->
-								<section class="contact">
-									<header>
-										<h3>Get to know me - Let's Connect</h3>
-									</header>
-									<p>Discover more about my work, passions, and the things that inspire me. Connect with me on social media to stay in touch! </p>
-									<div class="social-icons">
-										<a href="https://github.com/preetichouhan025" target="_blank" title="GitHub">
-											<i class="fab fa-github"></i>
-										</a>
-										<a href="https://www.linkedin.com/in/preetichouhan025/" target="_blank" title="LinkedIn">
-											<i class="fab fa-linkedin"></i>
-										</a>
-										<a href="https://twitter.com/ipreetichouhan" target="_blank" title="Twitter">
-											<i class="fab fa-twitter"></i>
-										</a>
-										<a href="https://medium.com/@preetichouhan025" target="_blank" title="Medium">
-											<i class="fab fa-medium"></i>
-										</a>
-
-										<a href="https://www.instagram.com/ipreetichouhan/" target="_blank" title="Instagram">
-											<i class="fab fa-instagram"></i>
-										</a>
-									</div>
-									
-								</section>
 
 						</div>
-
 					</div>
 				</div>
-			</div>
 
-
-	</div>
-
+		</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -361,38 +317,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-			<script>
-				document.getElementById('contact-form').addEventListener('submit', function(event) {
-					event.preventDefault(); // Prevent the default form submission
-				
-					const form = event.target;
-					const formData = new FormData(form);
-				
-					fetch(form.action, {
-						method: form.method,
-						body: formData,
-						headers: {
-							'Accept': 'application/json'
-						}
-					}).then(response => {
-						if (response.ok) {
-							form.reset(); // Clear the form fields
-							window.location.href = "#"; // Redirect to the homepage
-						} else {
-							response.json().then(data => {
-								if (Object.hasOwn(data, 'errors')) {
-									alert(data["errors"].map(error => error["message"]).join(", "));
-								} else {
-									alert("Oops! There was a problem submitting your form");
-								}
-							})
-						}
-					}).catch(error => {
-						alert("Oops! There was a problem submitting your form");
-					});
-				});
-				</script>
 
 	</body>
 </html>
