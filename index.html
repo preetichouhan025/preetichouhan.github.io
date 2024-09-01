@@ -9,6 +9,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<script>
+			// This script will check if the page was just refreshed
+			window.onload = function() {
+				if (performance.navigation.type === 1) {
+					// Redirect to home page
+					window.location.href = "index.html";
+				}
+			};
+		</script>
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
@@ -285,7 +295,7 @@
 					<div class="inner">
 						<h2 class="major">Looking for Opportunities and Open to Collaboration: Let's Connect</h2>
 						<p>I'm always eager to connect with like-minded individuals and explore new opportunities. Whether you have a project in mind, need help, or just want to chat, feel free to reach out—I'd love to hear from you!</p>
-						<form method="post" action="https://formspree.io/f/xeojdjzp">
+						<form method="post" action="https://formspree.io/f/xeojdjzp?redirect=https://preetichouhan025.github.io/preetichouhan.github.io/">
 							<div class="fields">
 								<div class="field">
 									<label for="name">Name</label>
@@ -363,7 +373,7 @@
 			<script src="assets/js/main.js"></script>
 
 			<script>
-				document.getElementById('contact-form').addEventListener('submit', function(event) {
+				document.querySelector('form').addEventListener('submit', function(event) {
 					event.preventDefault(); // Prevent the default form submission
 				
 					const form = event.target;
@@ -378,7 +388,7 @@
 					}).then(response => {
 						if (response.ok) {
 							form.reset(); // Clear the form fields
-							window.location.href = "#"; // Redirect to the homepage
+							window.location.href = "index.html"; // Redirect to the home page (update to "index.html" if that's your homepage)
 						} else {
 							response.json().then(data => {
 								if (Object.hasOwn(data, 'errors')) {
@@ -393,6 +403,8 @@
 					});
 				});
 				</script>
+				
+
 
 	</body>
 </html>

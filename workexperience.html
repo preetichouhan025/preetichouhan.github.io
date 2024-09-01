@@ -25,6 +25,17 @@
 				background-color: #e3c4ce; /* Darker green */
 			}
 		</style>
+
+		<script>
+			// This script will check if the page was just refreshed
+			window.onload = function() {
+				if (performance.navigation.type === 1) {
+					// Redirect to home page
+					window.location.href = "index.html";
+				}
+			};
+		</script>
+
 	</head>
 	<body class="no-sidebar is-preload">
 		<div id="page-wrapper">
