@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
-@import url("fontawesome-all.min.css");
+@import url("fontimageawesome-all.min.css");
 
 /*
 	Helios by HTML5 UP
@@ -141,7 +141,13 @@ input, select, textarea {
 	strong, b {
 		font-weight: 400;
 		color: #483949;
+		transition: 0.5s;
+		/* color: #0a060a; */
 	}
+		strong:hover {
+			-webkit-text-stroke: 2px #555;
+			color: transparent;
+		}
 
 	em, i {
 		font-style: italic;
@@ -1776,6 +1782,34 @@ input, select, textarea {
 		margin: 2.5em 0 0 0;
 	}
 
+
+/* Video */
+/* 
+	.video {
+		position: relative;
+		display: inline-block;
+		border: 0;
+		outline: 0;
+	}
+	
+	.video.featured {
+		display: block;
+		width: 100%;
+		margin: 0 0 4em 0;
+	}
+	 */
+
+/* Grad Video */
+	.grad-video{
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		margin: 0 0 4em 0;
+		border: 0;
+		outline: 0;
+
+	}
+
 /* Image */
 
 	.image {
@@ -2180,7 +2214,7 @@ input, select, textarea {
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
-		color: #fff;
+		color: #000000;
 		text-align: center;
 		padding: 7.5em 0 2em 0;
 		cursor: default;
@@ -2194,11 +2228,37 @@ input, select, textarea {
 		}
 
 		#header .inner {
-			position: relative;
-			z-index: 1;
-			margin: 0;
-			display: inline-block;
-			vertical-align: middle;
+			float: right; /* Moves the inner div to the right side */
+			width: 50%;   /* Makes the inner div take up half the container width */
+			text-align: left; /* Justifies the text inside the div */
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%; /* Ensures it fills the container vertically */
+			padding-right: 20px; /* Adds some padding on the right */
+			box-sizing: border-box; /* Ensures padding is included in the width */
+		}
+
+		.profile-picture {
+			position: absolute;
+			top: 50%; /* Centers vertically */
+			left: 10%; /* Adjust as needed to fit the left half */
+			transform: translateY(-50%); /* Centers the image exactly in the vertical middle */
+			width: 450px; /* Adjust size as needed */
+			height: 450px; /* Maintain aspect ratio */
+			overflow: hidden; /* Ensures the image stays within the circular shape */
+			border-radius: 50%; /*Creates a circular shape */
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+			background-color: #d9f4ff;
+			/* box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); Softer shadow for smoother edges */
+		}
+
+		.profile-picture img {
+			width: 100%;
+			height: 100%; /* Maintains aspect ratio */
+			display: flex;
+			border-radius: 50%; /* Ensures the image itself has soft edges */
+			object-fit: cover; /* Ensures the image covers the entire container without distortion */
 		}
 
 		#header header {
@@ -2206,12 +2266,23 @@ input, select, textarea {
 		}
 
 			#header header > p {
-				font-size: 1.25em;
+				font-size: 1.30em;
 				margin: 0;
+				color: #07050a ;
+				/* font-weight: bold;  */
+
 			}
+			#header header > pp {
+				font-size: 1.2em;
+				margin: 0;
+				color: #211d30 ;
+				/* font-style: italic; */
+				font-weight: bold; 
+			}
+			
 
 		#header h1 {
-			color: #fff;
+			color: #000000;
 			font-size: 3em;
 			line-height: 1em;
 		}
@@ -2219,6 +2290,8 @@ input, select, textarea {
 			#header h1 a {
 				color: inherit;
 			}
+
+			
 
 		#header .button {
 			display: inline-block;
@@ -2234,8 +2307,8 @@ input, select, textarea {
 		#header hr {
 			top: 1.5em;
 			margin-bottom: 3em;
-			border-bottom-color: rgba(192, 192, 192, 0.35);
-			box-shadow: inset 0 1px 0 0 rgba(192, 192, 192, 0.35);
+			border-bottom-color: rgba(50, 47, 47, 0.35);
+			box-shadow: inset 0 1px 0 0 rgba(46, 44, 44, 0.35);
 		}
 
 			#header hr:before, #header hr:after {
